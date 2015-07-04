@@ -1,0 +1,29 @@
+source:        .
+destination:   ./_site
+layouts:       ./_layouts
+
+name:          杜顺帆的个人博客
+description:   欢迎光临我的寒舍：杜顺帆的个人博客，记录各种IT，竞技游戏以及编程的优质原创内容。
+url:           http://dushunfan.com
+
+author:
+  name:        杜顺帆
+  email:       i@perry.asia
+
+defaults:
+  -
+    scope:
+      path:    ""
+      type:    post
+    values:
+      layout:  post
+
+permalink:     pretty
+paginate:      5
+paginate_path: page/:num
+markdown:      kramdown
+highlighter:   pygments
+
+sass:
+  sass_dir:    _sass
+  style:       :compressed

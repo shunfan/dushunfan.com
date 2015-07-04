@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ page.title }}{% if page.title != site.name %} - {{ site.name }}{% endif %}</title>
+    <meta name="description" content="{% if page.title == site.name %}{{ site.description }}{% else %}{{ page.excerpt | strip_html }}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="http://dushunfan.qiniudn.com/css/normalize.css">
+    <link rel="stylesheet" href="http://dushunfan.qiniudn.com/css/style-version-9.css">
+    <link rel="stylesheet" href="http://dushunfan.qiniudn.com/css/syntax.css">
+    <link rel="stylesheet" href="http://cdn.staticfile.org/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="http://dushunfan.qiniudn.com/favicon.png">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','27028']);_jf.push(['_setFont','dask5','css','.dask5']);_jf.push(['_setFont','dask5','alias','dask5']);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//ds.justfont.com/js/stable/v/4.2/id/113137823405");</script>
+    {% for js in page.javascripts %}{{ js }}
+    {% endfor %}
+  </head>
+  <body>
+    <header id="site-header">
+      <div id="header-wrapper">
+        <div id="site-title"><a href="/">杜顺帆的个人博客</a></div>
+      </div>
+    </header>
+
+    <div id="wrapper">
+      <div id="main">
+        {{ content }}
+      </div>
+
+      {% if paginator.previous_page or paginator.next_page or page.previous or page.next %}
+      <section id="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}"><div class="pagination-button-previous">上一页</div></a>
+        {% endif %}
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}"><div class="pagination-button-next">下一页</div></a>
+        {% endif %}
+        {% if page.previous %}
+        <a href="{{ page.previous.url }}"><div class="pagination-button-previous">上一篇</div></a>
+        {% endif %}
+        {% if page.next %}
+        <a href="{{ page.next.url }}"><div class="pagination-button-next">下一篇</div></a>
+        {% endif %}
+      </section>
+      {% endif %}
+    </div>
+
+    <footer id="site-footer">
+      <div id="footer-wrapper">
+        <p>博客由 <a href="http://jekyllrb.com/">Jekyll</a> 生成，托管于 <a href="https://www.digitalocean.com/?refcode=1a49df070c97">Digital Ocean</a>（SFO）</p>
+      </div>
+    </footer>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47541280-1', 'dushunfan.com');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,288 @@
+---
+---
+
+@import 'bourbon/bourbon';
+
+// Width
+$maxWidth: 1024px;
+
+// Colors
+$black: #141414;
+$gray: #8F8F8F;
+$white: #FFFFFF;
+$pink: #FF8585;
+
+// Font sizes6p
+$normalFontSize: 1em;
+$largeFontSize: 1.17em;
+$hugeFontSize: 1.75em;
+
+// Resets
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+html {
+  background-color: $pink;
+}
+
+body {
+  color: $black;
+  font-size: $normalFontSize;
+  font: 400 18px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+
+// Typography
+
+h1 { margin: 0.67em 0; font-size: 1.7em; }
+h2 { margin: 0.83em 0; font-size: 1.5em; padding: 0 0 0 0.4em; border-left: 0.2em solid $pink; }
+h3 { margin: 1em 0;    font-size: 1.1em; }
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  margin: 1.6em 0 1em 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.46em;
+}
+
+a {
+  color: $pink;
+  text-decoration: none;
+  word-wrap: break-word;
+
+  img {
+    border: none;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.2em 0;
+}
+
+pre {
+  padding: 15px 15px;
+  font-size: 0.96em;
+  font-family: $monospace;
+  background-color: lighten($pink, 20%);
+}
+
+// Web font
+#site-title {
+  font-family: dask5;
+}
+
+#post-list {
+  .post-title {
+    font-family: dask5;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: dask5;
+}
+
+.aside-title {
+  font-family: dask5;
+}
+
+// Normal style
+#site-header,
+#site-footer {
+  color: $white;
+  text-shadow: 2px 2px 2px darken($pink, 10%);
+
+  a {
+    color: $white;
+  }
+}
+
+#header-wrapper,
+#footer-wrapper {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+#site-footer {
+  a {
+    text-decoration: underline;
+  }
+}
+
+#site-title {
+  font-size: $hugeFontSize;
+}
+
+#main {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 20px 30px;
+  @include clearfix;
+}
+
+#wrapper {
+  background-color: $white;
+}
+
+// section.post-list is in index.html.
+#post-list {
+  width: 80%;
+  float: left;
+  padding-right: 20px;
+
+  .post-info {
+    margin: 0 0 30px 0;
+
+    .post-title {
+      a {
+        font-size: $largeFontSize;
+      }
+    }
+
+    .post-date {
+      color: $gray;
+    }
+
+    .post-excerpt {}
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+.aside-wrapper {
+  width: 20%;
+  float: left;
+  margin: 0 0 30px 0;
+
+  .aside-title {
+    padding: 10px;
+    text-align: center;
+    background-color: $pink;
+    color: $white;
+    font-size: $largeFontSize;
+    text-shadow: 2px 2px 2px darken($pink, 10%);
+  }
+
+  .aside-content {
+    ul {
+      margin: 0;
+      padding: 0;
+      background-color: lighten($pink, 18%);
+
+      a {
+        li {
+          margin: 0;
+          padding: 10px 0;
+          list-style: none;
+        }
+
+        &:hover {
+          li {
+            background-color: lighten($pink, 15%);
+          }
+        }
+      }
+    }
+
+    .logo {
+      width: 125px;
+      margin: 0 auto;
+    }
+
+    .learn-more {
+      text-align: center;
+    }
+  }
+}
+
+#pagination {
+  @include clearfix;
+
+  [class*='pagination-button-'] {
+    display: block;
+    padding: 10px 50px;
+    color: $pink;
+    background-color: lighten($pink, 18%);
+
+    &:hover {
+      background-color: lighten($pink, 15%);
+    }
+  }
+
+  .pagination-button-previous {
+    float: left;
+
+  }
+
+  .pagination-button-next {
+    float: right;
+  }
+}
+
+.post {
+  .post-title {
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  .post-date {
+    margin: 0 0 1em 0;
+    color: $gray;
+  }
+}
+
+.page {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #header-wrapper,
+  #footer-wrapper {
+    padding: 30px 20px;
+  }
+
+  #main {
+    padding: 20px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  #header-wrapper,
+  #footer-wrapper {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  #main {
+    padding: 20px 10px;
+  }
+
+  #post-list {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .aside-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {}
